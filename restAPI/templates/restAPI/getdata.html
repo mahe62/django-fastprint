@@ -1,0 +1,38 @@
+<!-- products.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data dari API</title>
+</head>
+<body>
+    <h1>Data dari API</h1>
+    <a href="{% url 'produk_list' %}" style="margin-bottom: 10px;" class="btn btn-primary">List data Tersimpan</a>
+    <form method="post">
+        {% csrf_token %}
+        <input type="submit" value="Simpan" name="save_button">
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>Nama Produk</th>
+                <th>Harga</th>
+                <th>Kategori</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for product in api_data.data %}
+                <tr>
+                    <td>{{ product.id }}</td>
+                    <td>{{ product.nama_produk }}</td>
+                    <td>{{ product.harga }}</td>
+                    <td>{{ product.kategori }}</td>
+                    <td>{{ product.status }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

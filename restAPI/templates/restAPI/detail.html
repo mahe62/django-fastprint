@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Produk Detail</title>
+</head>
+<body>
+    <h2>Produk Detail</h2>
+    <dl>
+        <dt>Nama Produk:</dt>
+        <dd>{{ produk.nama_produk }}</dd>
+        <dt>Harga:</dt>
+        <dd>{{ produk.harga }}</dd>
+        <dt>Kategori:</dt>
+        <dd>{{ produk.kategori.nama_kategori }}</dd>
+        <dt>Status:</dt>
+        <dd>{{ produk.status.nama_status }}</dd>
+    </dl>
+    <a href="{% url 'produk_list' %}">Back to List</a>
+    <a href="{% url 'produk_update' produk.id %}">Edit</a>
+    <a href="{% url 'produk_delete' produk.id %}">Delete</a>
+</body>
+</html>
