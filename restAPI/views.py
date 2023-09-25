@@ -3,15 +3,15 @@ from django.db import IntegrityError
 from .serializers import ProdukSerializer
 from .models import Produk,Kategori
 from .forms import ProdukForm
-import requests
+import datetime,hashlib,requests
 
 def postapiproduk(request):
     # API endpoint URL
     api_url = "https://recruitment.fastprint.co.id/tes/api_tes_programmer/"
 
     payload = {
-        "username": "tesprogrammer250923C03",
-        "password": "f09229a1106c4085b7b4578f52f366b8" 
+        'username': genuserpw('un'),
+        'password': genuserpw('pw')
     }
     try:
         response = requests.post(api_url, data=payload)
@@ -27,6 +27,28 @@ def postapiproduk(request):
             return HttpResponse(error_message)
     except requests.exceptions.RequestException as e:
         return HttpResponse(str(e))
+
+def genuserpw(x):
+    date = datetime.datetime.now()
+    date += datetime.timedelta(hours=1)
+    tahun = str(date.year)[-2:]
+    bulan = str(date.month).zfill(2)
+    hari = str(date.day).zfill(2)
+    jam = str(date.hour).zfill(2)
+
+    username = f"tesprogrammer{hari}{bulan}{tahun}C{jam}"
+    password = f"bisacoding-{hari}-{bulan}-{tahun}"
+    hasher = hashlib.md5()
+    hasher.update(password.encode('utf-8'))
+    password = hasher.hexdigest()
+    if(x=='pw'):
+        x=password
+        return x
+    elif(x=='un'):
+        x=username
+        return x
+
+
 
 
 # def getapiproduk(request):
