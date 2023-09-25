@@ -48,29 +48,6 @@ def genuserpw(x):
         x=username
         return x
 
-
-
-
-# def getapiproduk(request):
-#     api_url = "https://api.npoint.io/44c2454d8c5b7aa1ef73"
-#     try:
-#         # Make a GET request to the API
-#         response = requests.get(api_url)
-
-#         # Check the response status code
-#         if response.status_code == 200:
-#             data = response.json()
-            
-#             if request.method == 'POST' and 'save_button' in request.POST:
-#                 save_json_data_to_database(data)
-#             return render(request, 'restAPI/getdata.html', {'api_data': data})
-#         else:
-#             error_message = f"Failed to fetch data from the API. Status code: {response.status_code}"
-#             return HttpResponse(error_message)
-#     except requests.exceptions.RequestException as e:
-#         return HttpResponse(str(e))
-
-
 def produk_list(request):
     filter_status = request.POST.get('filter_status', 'off')
 

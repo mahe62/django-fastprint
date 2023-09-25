@@ -1,26 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Produk List</title>
-</head>
-<body>
-    <h2>Produk List</h2>
-    <ul>
-        {% for produk in produk_list %}
-            <li>
-                <a href="{% url 'produk_detail' produk.id %}">{{ produk.nama_produk }}</a>
-                <a href="{% url 'produk_update' produk.id %}">Edit</a>
-                <a href="{% url 'produk_delete' produk.id %}">Delete</a>
-            </li>
-        {% empty %}
-            <p>No produk available.</p>
-        {% endfor %}
-    </ul>
-    <a href="{% url 'produk_create' %}">Add New Produk</a>
-</body>
-</html> -->
-
 <!DOCTYPE html>
 <html>
 <head>
