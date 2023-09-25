@@ -5,7 +5,7 @@ Program ini dibuat menggunakan bahasa pemrograman python serta menggunakan frame
 
 ***1. Ambil data dari API yang sudah disediakan.***
 ![getdata](pic/1.png)  
-Gambar diatas merupakan data yang telah didapat dari API dan ditampilkan pada halaman utama. untuk menyimpan data api ke database. klik tombol "Simpan". 
+Gambar diatas merupakan data yang telah didapat dari API dan ditampilkan pada halaman utama. untuk menyimpan data api ke database. klik tombol `Simpan`. 
 untuk melihat data yang telah tersimpan ke database, klik tombol "List data Tersimpan".
 
 ---
