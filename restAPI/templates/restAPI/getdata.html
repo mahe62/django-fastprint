@@ -1,37 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Data dari API</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
+
 <body>
-    <h1>Data dari API</h1>
-    <a href="{% url 'produk_list' %}" style="margin-bottom: 10px;" class="btn btn-primary">List data Tersimpan</a>
-    <form method="post">
-        {% csrf_token %}
-        <input type="submit" value="Simpan" name="save_button">
-    </form>
-    <table>
-        <thead>
-            <tr>
-                <th>id</th>
-                <th>Nama Produk</th>
-                <th>Harga</th>
-                <th>Kategori</th>
-                <th>Status</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for product in api_data.data %}
-                <tr>
-                    <td>{{ product.id }}</td>
-                    <td>{{ product.nama_produk }}</td>
-                    <td>{{ product.harga }}</td>
-                    <td>{{ product.kategori }}</td>
-                    <td>{{ product.status }}</td>
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+    
+    <div class="container">
+        <h1>Data dari API</h1>
+        <div class="row">
+            <div class="col-sm-4">
+                <a href="{% url 'produk_list' %}" style="margin-bottom: 10px;" class="btn btn-primary">List data
+                    Tersimpan</a>
+            </div>
+            <div class="col-sm-4">
+                <form method="post">
+                    {% csrf_token %}
+                    <input type="submit" value="Simpan" name="save_button" class="btn btn-primary">
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>Nama Produk</th>
+                        <th>Harga</th>
+                        <th>Kategori</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for product in api_data.data %}
+                    <tr>
+                        <td>{{ product.id }}</td>
+                        <td>{{ product.nama_produk }}</td>
+                        <td>{{ product.harga }}</td>
+                        <td>{{ product.kategori }}</td>
+                        <td>{{ product.status }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+
 </html>

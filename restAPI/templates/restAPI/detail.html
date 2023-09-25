@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Produk Detail</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
+    <div class="container">
     <h2>Produk Detail</h2>
     <dl>
         <dt>Nama Produk:</dt>
@@ -16,8 +18,9 @@
         <dt>Status:</dt>
         <dd>{{ produk.status.nama_status }}</dd>
     </dl>
-    <a href="{% url 'produk_list' %}">Back to List</a>
-    <a href="{% url 'produk_update' produk.id %}">Edit</a>
-    <a href="{% url 'produk_delete' produk.id %}">Delete</a>
+    <a href="{% url 'produk_list' %}" class="btn btn-secondary">Back to List</a>
+    <a href="{% url 'produk_update' produk.id %}" class="btn btn-success">Edit</a>
+    <a href="{% url 'produk_delete' produk.id %}" class="btn btn-danger">Delete</a>
+</div>
 </body>
 </html>
