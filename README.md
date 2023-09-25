@@ -34,7 +34,9 @@ Gambar diatas merupakan tampilan "daftar produk yang Tersimpan" yang telah dilak
 ---
 ***6. Buat fitur untuk edit, tambah dan hapus***  
 * Tambah data.  
-(inputan nama harus diisi, dan harga harus berupa inputan angka)
+(inputan nama harus diisi, dan harga harus berupa inputan angka)  
+![list](pic/4.png)  
+untuk melakukan tambah data klik link "Tambah Data" yang akan mengarah ke tampilan form tambah data.  
 ![add1](pic/6.png) 
 Gambar diatas merupakan tampilan "Tambah data" pada halaman tambah data form sudah menggunakan from validasi.  
 ![add2](pic/7.png)  
@@ -43,6 +45,8 @@ Gambar diatas merupakan tampilan "Tambah data" ketika from input tidak diisi.
 Gambar diatas merupakan tampilan "daftar produk yang Tersimpan" yang telah dilakukan tambah data. 
 
 * Edit data.  
+![list](pic/4.png)  
+untuk melakukan edit data klik link/tombol "edit" pada data yang ingin di edit. setelak di klik nanti akan mengarah pada form edit data.   
 ![update1](pic/9.png) 
 Gambar diatas merupakan tampilan "Edit data" pada halaman edit data form sudah menggunakan from validasi sama seperti form tambah data.
 ![update2](pic/10.png)  
