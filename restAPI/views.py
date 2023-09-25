@@ -57,15 +57,14 @@ def produk_list(request):
         else:
             filter_status = 'off'
 
-    lsitproduk = Produk.objects.values('id','nama_produk', 'harga', 'kategori__nama_kategori', 'status__nama_status')
+    listproduk = Produk.objects.values('id','nama_produk', 'harga', 'kategori__nama_kategori', 'status__nama_status')
 
     if filter_status == 'on':
-        lsitproduk = lsitproduk.order_by('id')
-        lsitproduk = lsitproduk.filter(status__nama_status="{'nama_status': 'bisa dijual'}").values('id','nama_produk', 'harga', 'kategori__nama_kategori', 'status__nama_status')
+        listproduk = listproduk.order_by('id')
+        listproduk = listproduk.filter(status__nama_status='bisa dijual').values('id','nama_produk', 'harga', 'kategori__nama_kategori', 'status__nama_status')
     else:
-        lsitproduk = lsitproduk.order_by('id')
-    return render(request, 'restAPI/list.html', {'produk': lsitproduk, 'filter_status': filter_status})
-
+        listproduk = listproduk.order_by('id')
+    return render(request, 'restAPI/list.html', {'produk': listproduk, 'filter_status': filter_status})
 
 def produk_detail(request, id):
     produk = get_object_or_404(Produk, id=id)

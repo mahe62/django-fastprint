@@ -19,8 +19,8 @@ class ProdukSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
     def create(self, validated_data):
-        kategori_data = validated_data.pop('kategori', None)
-        status_data = validated_data.pop('status', None)
+        kategori_data = validated_data.pop('kategori').pop('nama_kategori')
+        status_data = validated_data.pop('status').pop('nama_status')
 
         kategori, _ = Kategori.objects.get_or_create(nama_kategori=kategori_data)
         status, _ = Status.objects.get_or_create(nama_status=status_data)
